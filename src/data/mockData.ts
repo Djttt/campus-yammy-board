@@ -30,7 +30,7 @@ export const dishesData: Dish[] = [
     id: '3',
     name: '清炒时蔬组合',
     description: '西兰花、胡萝卜、木耳清炒，健康低脂首选。',
-    price: 8.00,
+    price: 8.5,
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop',
     category: '小吃',
     tags: ['Spicy', 'Spicy'],

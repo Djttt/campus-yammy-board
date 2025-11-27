@@ -8,16 +8,22 @@ import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Detail from './pages/Detail'
 import NoMatch from './pages/NoMatch'
+import { dishesData,  } from "./data/mockData"
 
-function App() {
+function App() {  
+
+  const dishes = dishesData;
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
-          <Route path='/menu' element={<Menu />}></Route>
-          <Route path='/detail' element={<Detail />}></Route>
+          <Route path='/menu' element={<Menu dishes={dishes} />}></Route>
+          {
+              dishes.map(dish => <Route path={`detail/${dish.name}` + `-${dish.id}`} 
+                        element={<Detail {...dish}></Detail>}></Route>)
+          }
           <Route path="*" element={<NoMatch />}></Route>
         </Route>
       </Routes>

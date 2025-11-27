@@ -15,7 +15,6 @@ function Layout() {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/menu">Menu</Nav.Link>
-                        <Nav.Link as={Link} to="/detail">Detail</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
