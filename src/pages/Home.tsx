@@ -1,7 +1,11 @@
 export default function Home() {
     return (
-        <div>
-            <p>this is home page!</p>
-        </div>
+        <>
+            <h1>Welcome to campus-yummy-board!</h1>
+            <div>
+                <p>this is home page! welcome!</p>
+            </div>
+        </>
+
     );
 }

@@ -14,12 +14,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}></Route>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
           <Route path='/menu' element={<Menu />}></Route>
           <Route path='/detail' element={<Detail />}></Route>
-          
           <Route path="*" element={<NoMatch />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
 

@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom"
+
 export default function NoMatch() {
 
     return (
         <div>
+            <h2>That's a 404.</h2>
+            <p>Uh oh, looks like you are lost!</p>
+            <p>
+                <Link to="/">Back to safety.</Link>
+            </p>
             <p>This is a no-match page!</p>
         </div>
     )
