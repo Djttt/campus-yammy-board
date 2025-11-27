@@ -20,7 +20,7 @@ function Layout() {
                 </Container>
             </Navbar>
 
-            <div style={{ margin: "1rem"}}>
+            <div style={{ margin: "4em" }}>
                 <Outlet />
             </div>
         </div>

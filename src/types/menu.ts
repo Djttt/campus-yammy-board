@@ -1,4 +1,6 @@
 
+export type Category = '所有' | '盖浇饭' | '面食' | '小吃' | '饮料';
+
 // 口味标签
 export type FlavorTag = 'Spicy' | 'Sweet' | 'Salty' | 'Vegetarian' | 'Halal';
 
@@ -13,7 +15,7 @@ export interface Dish {
     isAvailable: boolean;
     calories?: number;
     rating?: number;
-    category: 'Main' | 'Side' | 'Drink';    
+    category: Category;    
 }
 
 export interface StallStatus {
