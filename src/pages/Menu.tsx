@@ -8,7 +8,6 @@ export default function Menu(props: {dishes: Dish[]}) {
 
     return (
         <div>
-            <p>This is a Menu page!</p>
             {
                 <Row>
                     { props.dishes.map(dish => <Col key={dish.id} 

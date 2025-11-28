@@ -29,6 +29,7 @@ export interface StallStatus {
 export interface Canteen {
     id: string;
     name: string;
+    imgUrl?: string;
     floors: Floor[];
     description: string;
     location?: string;

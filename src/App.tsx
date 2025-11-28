@@ -8,9 +8,9 @@ import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Detail from './pages/Detail'
 import NoMatch from './pages/NoMatch'
-import { dishesData,  } from "./data/mockData"
+import { dishesData } from "./data/mockData"
 import Canteen from "./pages/Canteen"
-
+import Floor from './pages/Floor'
 import { canteens } from "./types/menu"
 
 function App() {  
@@ -25,9 +25,17 @@ function App() {
           {
             canteens.map(canteen => <Route path={`canteens/${canteen.id}`} element={<Canteen {...canteen}></Canteen>}></Route>)
           }
+          {
+            canteens.map(canteen => (canteen.floors.map(
+              floor => <Route path={`canteens/${canteen.id}/floors/${floor.id}`} element={<Floor {...floor}/>}></Route>
+                )))
+          }
+
+          
+
           <Route path='/menu' element={<Menu dishes={dishes} />}></Route>
           {
-              dishes.map(dish => <Route path={`detail/${dish.name}` + `-${dish.id}`} 
+            dishes.map(dish => <Route path={`detail/${dish.name}` + `-${dish.id}`} 
                         element={<Detail {...dish}></Detail>}></Route>)
           }
           <Route path="*" element={<NoMatch />}></Route>
