@@ -1,6 +1,7 @@
+import type { GiscusProps } from '@giscus/react';
 
-export const giscusConfigureData = {
-    repo: "Djttt/campus-canteen-assets",
+export const giscusConfigureData: GiscusProps = {
+    repo: 'Djttt/campus-canteen-assets' as `${string}/${string}`,
     repoId: "R_kgDOQeAZRQ",
     categoryId: "DIC_kwDOQeAZRc4CzHEr",
     category: "Announcements",

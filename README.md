@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# 校园美食看板 (Campus Yummy Board)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个现代化的 Web 应用，旨在为学生和教职工提供一个美观、易用的界面，用于浏览和发现校园内的各种美食。
 
-Currently, two official plugins are available:
+## ✨ 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **美食浏览**: 以卡片形式清晰地展示美食列表。
+- **详情查看**: 点击美食可进入详情页面，查看更多信息和评论。
+- **响应式设计**: 完美适配桌面和移动设备。
+- **评论系统**: 集成了 Giscus，允许用户通过 GitHub Issues 进行评论和反馈。
+- **清晰的路由**: 使用 React Router 实现多页面导航。
 
-## React Compiler
+## 🛠️ 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **前端框架**: [React](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
+- **UI 组件库**: [React-Bootstrap](https://react-bootstrap.github.io/) & [Bootstrap](https://getbootstrap.com/)
+- **构建工具**: [Vite](https://vitejs.dev/)
+- **路由**: [React Router](https://reactrouter.com/)
+- **代码规范**: [ESLint](https://eslint.org/)
+- **评论系统**: [Giscus](https://giscus.app/)
 
-## Expanding the ESLint configuration
+## 🚀 快速开始
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+请确保你的开发环境中已安装 [Node.js](https://nodejs.org/) (推荐 v18 或更高版本)。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**1. 克隆仓库**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/djttt/campus-yummy-board.git
+cd campus-yummy-board
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**2. 安装依赖**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**3. 启动开发服务器**
+
+```bash
+npm run dev
+```
+
+**4. 访问应用**
+
+在浏览器中打开 `http://localhost:5173` (或终端提示的地址)。
+
+## 📜 可用脚本
+
+在项目根目录中，你可以运行以下脚本：
+
+- `npm run dev`: 在开发模式下启动应用，支持热更新。
+- `npm run build`: 将项目打包为生产环境的静态文件，输出到 `dist` 目录。
+- `npm run lint`: 使用 ESLint 检查代码规范。
+- `npm run preview`: 在本地启动一个静态服务器，预览生产环境的构建包。
+
+## 📁 项目结构
+
+```
+.
+├── public/              # 存放公共静态资源
+├── src/
+│   ├── assets/          # 存放组件内部使用的静态资源
+│   ├── components/      # 可复用的 React 组件 (如 DishCard, Layout)
+│   ├── data/            # 模拟数据
+│   ├── pages/           # 页面级组件 (如 Home, Menu, Detail)
+│   ├── types/           # TypeScript 类型定义
+│   ├── App.tsx          # 应用根组件
+│   └── main.tsx         # 应用入口文件
+├── eslint.config.js     # ESLint 配置文件
+├── tsconfig.json        # TypeScript 编译器配置
+└── vite.config.ts       # Vite 配置文件
 ```
