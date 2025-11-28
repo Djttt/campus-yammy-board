@@ -9,6 +9,9 @@ import Menu from './pages/Menu'
 import Detail from './pages/Detail'
 import NoMatch from './pages/NoMatch'
 import { dishesData,  } from "./data/mockData"
+import Canteen from "./pages/Canteen"
+
+import { canteens } from "./types/menu"
 
 function App() {  
 
@@ -19,6 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
+          {
+            canteens.map(canteen => <Route path={`canteens/${canteen.id}`} element={<Canteen {...canteen}></Canteen>}></Route>)
+          }
           <Route path='/menu' element={<Menu dishes={dishes} />}></Route>
           {
               dishes.map(dish => <Route path={`detail/${dish.name}` + `-${dish.id}`} 

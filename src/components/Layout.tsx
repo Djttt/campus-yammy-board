@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link, Outlet } from "react-router-dom"
+import { canteens } from "../types/menu"
 
 function Layout() {
     console.log("Layout rendered!"); 
@@ -14,6 +15,11 @@ function Layout() {
 
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        {
+                            canteens.map(canteen => 
+                                <Nav.Link as={Link} to={`/canteens/${canteen.id}`}>{canteen.name}</Nav.Link>
+                            ) 
+                        }
                         <Nav.Link as={Link} to="/menu">Menu</Nav.Link>
                     </Nav>
                 </Container>
