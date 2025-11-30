@@ -2,7 +2,11 @@ import Window from "./Window";
 import { Row, Col } from "react-bootstrap"
 import type { Floor } from "../types/menu";
 
-export default function Floor(props: Floor) {
+interface floorProps extends Floor {
+    canteenId: string;
+}
+
+export default function Floor(props: floorProps) {
     
     return (<div>
         <Row>
@@ -14,7 +18,7 @@ export default function Floor(props: Floor) {
                     md={6}
                     lg={4}
                 >
-                    <Window  {...w}></Window>
+                    <Window  {...w} canteenId={props.canteenId} floorId={props.id}></Window>
                 </Col>)
             }
         </Row>        

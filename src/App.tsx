@@ -12,6 +12,7 @@ import { dishesData } from "./data/mockData"
 import Canteen from "./pages/Canteen"
 import Floor from './pages/Floor'
 import { canteens } from "./types/menu"
+import DishCard from './components/DishCard'
 
 function App() {  
 
@@ -27,11 +28,17 @@ function App() {
           }
           {
             canteens.map(canteen => (canteen.floors.map(
-              floor => <Route path={`canteens/${canteen.id}/floors/${floor.id}`} element={<Floor {...floor}/>}></Route>
+              floor => <Route path={`canteens/${canteen.id}/floors/${floor.id}`} element={<Floor {...floor} canteenId={canteen.id}/>}></Route>
                 )))
           }
 
-          
+          {
+            canteens.map(canteen => canteen.floors.map(floor => floor.windows.map(
+                w => w.dishes.map(dish => <Route path={`/canteens/${canteen.id}/floors/${floor.id}/${dish.name}`}
+                                           element={<DishCard {...dish}/>}>
+                </Route>)))
+            ) 
+          }
 
           <Route path='/menu' element={<Menu dishes={dishes} />}></Route>
           {
